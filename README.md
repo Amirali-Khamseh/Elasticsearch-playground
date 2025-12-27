@@ -5,7 +5,7 @@
 - Create a virtual enviornment
   `py -m venv .venv`
 - Activate the virtual environment
-  `source .venv/bin/activate` or in WLS `.venv\Scripts\activate`
+  `source .venv/bin/activate` or in WLS `source .venv/Scripts/activate`
 - Intsall the dependencies
   `pip install -r requirements.txt`
 - Run the Project
