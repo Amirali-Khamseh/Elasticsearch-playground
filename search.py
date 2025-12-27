@@ -29,9 +29,15 @@ class Search:
             operations.append({'index': {'_index': 'my_documents'}})
             operations.append(document)
         return self.es.bulk(operations=operations)
-        
+
     def reindex(self):
         self.create_index()
         with open('data.json', 'rt') as f:
             documents = json.loads(f.read())
-        return self.insert_documents(documents)    
+        return self.insert_documents(documents)
+
+    def search(self, **query_args):
+        return self.es.search(index='my_documents', **query_args)
+        
+    def retrieve_document(self, id):
+        return self.es.get(index='my_documents', id=id)
